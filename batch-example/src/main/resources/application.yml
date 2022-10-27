@@ -1,4 +1,30 @@
 spring:
+  profiles:
+    active: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_batch?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false&useUniCode=yes
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ssafy
+    password: ssafy
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
   batch:
-    job:
-      names: ${job.name:NONE}
+    jdbc:
+      initialize-schema: ALWAYS
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  jpa:
+    database: h2

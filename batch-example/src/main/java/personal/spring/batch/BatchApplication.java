@@ -1,4 +1,4 @@
-package personal.spring.batch.batch;
+package personal.spring.batch;
 
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.boot.SpringApplication;
